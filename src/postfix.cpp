@@ -23,8 +23,7 @@ std::string infix2postfix(std::string infix) {
                         while ((x = s.pop()) != '(') {
                             postfix[j++] = x;
                         }
-                    }
-                  else {
+                    } else {
                         while (prcd(token) <= prcd(s.get()) && !s.isEmpty()) {
                             x = s.pop();
                             postfix[j++] = x;
@@ -34,7 +33,6 @@ std::string infix2postfix(std::string infix) {
                 }
             }
         }
-
     }
 
     while (!s.isEmpty()) {
