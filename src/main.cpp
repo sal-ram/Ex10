@@ -4,9 +4,7 @@
 
 int main()
 {
-    std::string s1("(1 + 2) / (3 + 4 * 6.7) - 5.3 * 4.4");
+    std::string s1("(2 + 8.3) * (6 - 3.2)");
     std::string s2 = infix2postfix(s1);
-    std::string s3;
     std::cout << s2;
 }
-
