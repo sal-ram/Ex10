@@ -6,14 +6,13 @@
 #include <string>
 
 template <typename T>
-class MyStack
-{
-private:
+class MyStack {
+ private:
     T* stackPtr;
     int size;
     T top = 0;
 
-public:
+ public:
     explicit MyStack(int n_size) {
         size = n_size;
         stackPtr = new T[size];
@@ -49,18 +48,16 @@ public:
     bool isFull() const {
         if (top == size) {
             return true;
-        }
-        else {
+        } else {
             return false;
-        };
+        }
     }
 
     bool isEmpty() const {
         if (top == 0) {
             return true;
-        }
-        else {
+        } else {
             return false;
-        };
+        }
     }
 };

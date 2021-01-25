@@ -12,26 +12,26 @@ std::string infix2postfix(std::string infix) {
 
     for (i = 0; infix[i] != '\0'; i++) {
         token = infix[i];
-        if (token != ' ')
-        {
+        if (token != ' ') {
             if (isalnum(token) || token == '.') {
                 postfix[j++] = token;
-            }
-            else {
-                if (token == '(')
+            } else {
+                if (token == '(') {
                     s.push(token);
-                else
-                    if (token == ')')
+                } else {
+                    if (token == ')') {
                         while ((x = s.pop()) != '(') {
                             postfix[j++] = x;
                         }
-                    else {
-                        while (precedence(token) <= precedence(s.get()) && !s.isEmpty()) {
+                    }
+                  else {
+                        while (prcd(token) <= prcd(s.get()) && !s.isEmpty()) {
                             x = s.pop();
                             postfix[j++] = x;
                         }
                         s.push(token);
                     }
+                }
             }
         }
 
@@ -61,7 +61,7 @@ std::string infix2postfix(std::string infix) {
     return postfix_probel;
 }
 
-int precedence(char x) {
+int prcd(char x) {
     if (x == '(')
         return(0);
     if (x == ')')

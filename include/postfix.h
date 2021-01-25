@@ -1,3 +1,6 @@
+// Copyright Salakhov Ramazan
+
 #pragma once
+#include <string>
 std::string infix2postfix(std::string infix);
-int precedence(char x);
+int prcd(char x);
