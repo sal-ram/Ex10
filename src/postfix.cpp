@@ -1,7 +1,4 @@
 // Copyright Salakhov Ramazan
-#include<stdio.h>
-#include<conio.h>
-#include<ctype.h>
 #include "MyStack.h"
 #include "postfix.h"
 #define MAX 50
