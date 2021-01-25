@@ -5,7 +5,7 @@
 int main()
 {
     std::string s1("(1 + 2) / (3 + 4 * 6.7) - 5.3 * 4.4");
-    std::string s2 = infix2prefix(s1);
+    std::string s2 = infix2postfix(s1);
     std::string s3;
     char* okey = new char[s1.length() + 1];
     okey[0] = s2[0];
@@ -18,6 +18,6 @@ int main()
     }
 
     okey [j] = '\0';
-    std::cout << okey;  // 2 6 3 * 4 2 - / +
+    std::cout << okey;
 }
 

@@ -3,11 +3,11 @@
 #include "postfix.h"
 #define MAX 50
 
-std::string infix2prefix(std::string infix) {
+std::string infix2postfix(std::string infix) {
     MyStack <char> s(infix.length() + 1);
     char* postfix = new char[infix.length() + 1];
     char x, token;
-    int i, j, z = 0;    //i-index of infix, j-index of postfix
+    int i, j, z = 0;
     j = 0;
 
     for (i = 0; infix[i] != '\0'; i++) {
