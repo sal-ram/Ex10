@@ -6,7 +6,7 @@ std::string infix2postfix(std::string infix) {
     MyStack <char> s(infix.length() + 1);
     char* postfix = new char[infix.length() + 1];
     char x, token;
-    int i, j, z = 0;    //i-index of infix, j-index of postfix
+    int i, j, z = 0;
     j = 0;
 
     for (i = 0; infix[i] != '\0'; i++) {
@@ -54,7 +54,7 @@ std::string infix2postfix(std::string infix) {
         }
     }
 
-    okey[j] = '\0';
+    okey[j - 1] = '\0';
 
     return okey;
 }
