@@ -1,4 +1,3 @@
-// Copyright Salakhov Ramazan
 #include "MyStack.h"
 #include "postfix.h"
 #define MAX 50
@@ -7,7 +6,7 @@ std::string infix2postfix(std::string infix) {
     MyStack <char> s(infix.length() + 1);
     char* postfix = new char[infix.length() + 1];
     char x, token;
-    int i, j, z = 0;
+    int i, j, z = 0;    //i-index of infix, j-index of postfix
     j = 0;
 
     for (i = 0; infix[i] != '\0'; i++) {
@@ -44,7 +43,20 @@ std::string infix2postfix(std::string infix) {
 
     postfix[j] = '\0';
 
-    return postfix;
+    j = 1;
+    char* okey = new char[1000];
+
+    okey[0] = postfix[0];
+    for (i = 1; i < infix.length() + 1; i++) {
+        if (postfix[i - 1] != '.') {
+            okey[j++] = ' ';
+            okey[j++] = postfix[i];
+        }
+    }
+
+    okey[j] = '\0';
+
+    return okey;
 }
 
 int precedence(char x) {
